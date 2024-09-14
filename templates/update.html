@@ -1,0 +1,47 @@
+<html>
+    <body>
+        <h1>Editar Contacto</h1>
+        <table>
+            <tr>
+                {% for contact in contacts %}
+                <form action="/update/{{ contact[0] }}" method="POST">
+                    <td></td>
+                    <td>
+                        <label for="firstName">Nombre:</label><br />
+                        <input
+                            type="text"
+                            name="firstName"
+                            value="{{ contact[1] }}"
+                        />
+                    </td>
+                    <td>
+                        <label for="lastName">Apellido:</label><br />
+                        <input
+                            type="text"
+                            name="lastName"
+                            value="{{ contact[2] }}"
+                        />
+                    </td>
+                    <td>
+                        <label for="cellphone">Télefono:</label><br />
+                        <input
+                            type="text"
+                            name="cellphone"
+                            value="{{ contact[3] }}"
+                        />
+                    </td>
+                    <td>
+                        <label for="email">Correo:</label><br />
+                        <input
+                            type="text"
+                            name="email"
+                            value="{{ contact[4] }}"
+                        />
+                    </td>
+                    <td><br /><input type="submit" value="Actualizar" /></td>
+                </form>
+                {% endfor %}
+            </tr>
+        </table>
+    </body>
+</html>
